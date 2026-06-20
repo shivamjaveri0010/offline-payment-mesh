@@ -1,8 +1,23 @@
-# Offline Payment Mesh
+# 📡 Offline Payment Mesh
 
 A Spring Boot simulation of an offline UPI-style payment network where encrypted payment packets travel through a Bluetooth mesh of nearby devices until a connected bridge node uploads them to the backend for settlement.
 
-## Overview
+---
+
+## 🚀 Key Highlights
+
+* 🔐 Hybrid Encryption (RSA-OAEP + AES-256-GCM)
+* 📱 Bluetooth Mesh Network Simulation
+* ♻️ Exactly-Once Transaction Processing
+* 🛡️ Replay Attack Protection
+* ⚡ Idempotent Settlement
+* 🔄 Optimistic Locking
+* 💾 Transactional Ledger Updates
+* ☕ Spring Boot 3.3.5 + Java 17
+
+---
+
+## 📖 Overview
 
 Traditional UPI payments require an active internet connection. This project explores how a payment instruction could be securely transported through a mesh network when the sender has no connectivity.
 
@@ -18,7 +33,7 @@ The system simulates:
 
 ---
 
-## Architecture
+## 🏗️ Architecture
 
 ```text
 Sender Device
@@ -55,9 +70,9 @@ Transaction Ledger
 
 ---
 
-## Key Features
+## ✨ Key Features
 
-### Hybrid Encryption
+### 🔐 Hybrid Encryption
 
 Payment instructions are encrypted using:
 
@@ -66,7 +81,9 @@ Payment instructions are encrypted using:
 
 The server publishes a public key and only the backend can decrypt incoming payment packets.
 
-### Mesh Network Simulation
+---
+
+### 📱 Mesh Network Simulation
 
 Packets are propagated through a network of virtual devices using a gossip protocol.
 
@@ -77,7 +94,9 @@ Features:
 * Time-to-live (TTL)
 * Bridge node delivery
 
-### Idempotent Processing
+---
+
+### ♻️ Idempotent Processing
 
 Duplicate packet deliveries are prevented using:
 
@@ -87,7 +106,9 @@ Duplicate packet deliveries are prevented using:
 
 This ensures that even if multiple bridge nodes upload the same packet simultaneously, only one transaction is settled.
 
-### Replay Protection
+---
+
+### 🛡️ Replay Protection
 
 The system validates:
 
@@ -97,7 +118,9 @@ The system validates:
 
 to prevent replay attacks.
 
-### Transactional Settlement
+---
+
+### ⚡ Transactional Settlement
 
 Settlement uses:
 
@@ -109,7 +132,7 @@ to guarantee safe balance updates.
 
 ---
 
-## Technology Stack
+## 🛠️ Technology Stack
 
 ### Backend
 
@@ -134,7 +157,7 @@ to guarantee safe balance updates.
 
 ---
 
-## Core Components
+## 🧩 Core Components
 
 ### BridgeIngestionService
 
@@ -173,7 +196,7 @@ Simulates:
 
 ---
 
-## Dashboard
+## 🖥️ Dashboard
 
 The project includes a Thymeleaf dashboard that allows users to:
 
@@ -187,7 +210,7 @@ The project includes a Thymeleaf dashboard that allows users to:
 
 ---
 
-## Running Locally
+## ▶️ Running Locally
 
 Clone the repository:
 
@@ -198,11 +221,13 @@ cd offline-payment-mesh
 
 Run the application:
 
+### Linux / Mac
+
 ```bash
 ./mvnw spring-boot:run
 ```
 
-Windows:
+### Windows
 
 ```bash
 mvnw.cmd spring-boot:run
@@ -216,7 +241,7 @@ http://localhost:8080
 
 ---
 
-## Sample Demo Flow
+## 🎬 Sample Demo Flow
 
 1. Create a payment from Alice to Bob.
 2. Encrypt the payment instruction.
@@ -233,7 +258,7 @@ http://localhost:8080
 
 ---
 
-## Learning Outcomes
+## 📚 Learning Outcomes
 
 This project demonstrates concepts commonly found in distributed payment systems:
 
@@ -248,7 +273,7 @@ This project demonstrates concepts commonly found in distributed payment systems
 
 ---
 
-## Future Improvements
+## 🔮 Future Improvements
 
 * Real Bluetooth Low Energy communication
 * Redis-backed distributed idempotency
@@ -261,9 +286,8 @@ This project demonstrates concepts commonly found in distributed payment systems
 
 ---
 
-## Author
+## 👨‍💻 Author
 
-Shivam Javeri
+**Shivam Javeri**
 
-GitHub:
-https://github.com/shivamjaveri0010
+GitHub: https://github.com/shivamjaveri0010
